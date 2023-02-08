@@ -920,7 +920,6 @@ Resources:
     DeletionPolicy: Delete
     Properties:
       BucketName: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-data"
-      AccessControl: PublicRead
       Tags:
         - Key: Name
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-data"
@@ -940,6 +939,13 @@ Resources:
           Value: 509b197d-4f87-4ae1-aa43-8cca13c9e92e
         - Key: git_org
           Value: bridgecrewio
+      PublicAccessBlockConfiguration:
+        IgnorePublicAcls: True
+        RestrictPublicBuckets: True
+        BlockPublicAcls: True
+        BlockPublicPolicy: True
+      VersioningConfiguration:
+        Status: Enabled
 
   ### TODO - Custom Upload of insecure document
   FinancialsBucket:
