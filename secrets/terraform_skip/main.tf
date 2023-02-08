@@ -13,6 +13,9 @@ resource "aws_lambda_function" "skip" {
       secret_key = ""
     }
   }
+  tracing_config {
+    mode = "PassThrough"
+  }
 }
 
 resource "aws_lambda_function" "wrong_skip" {
