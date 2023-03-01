@@ -370,6 +370,12 @@ Resources:
           Value: "2021-08-23 13:51:41"
         - Key: git_last_modified_by
           Value: nimrodkor@gmail.com
+      PublicAccessBlockConfiguration:
+        IgnorePublicAcls: True
+        BlockPublicAcls: True
+        BlockPublicPolicy: True
+      VersioningConfiguration:
+        Status: Enabled
 
   #############
   ###  IAM  ###
