@@ -968,6 +968,8 @@ Resources:
           Value: bridgecrewio
         - Key: git_repo
           Value: cfngoat
+      PublicAccessBlockConfiguration:
+        IgnorePublicAcls: True
   OperationsBucket:
     # not encrypted, no access logs
     Type: AWS::S3::Bucket
